@@ -1,0 +1,9 @@
+scikit-learn==1.6.1
+pandas==2.2.3
+seaborn==0.13.2
+matplotlib==3.10.0
+torch==2.6.0
+torchvision==0.21.0
+pillow==11.1.0
+ipywidgets==8.1.5
+efficientnet-pytorch==0.7.1
