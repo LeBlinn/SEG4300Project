@@ -103,12 +103,3 @@ def load_and_predict(image_path):
         confidences, predicted_class = probabilities.max(1)  # Get the class with highest probability and its confidence score
 
     return predicted_class.item(), confidences.item()  # Return both predicted class and confidence score
-
-# Example usage
-if __name__ == "__main__":
-    image_path = "testimg.jpg"
-    predicted_index, confidence = load_and_predict(image_path)
-
-    # Define class labels
-    class_labels = ["Alkaline", "Li-ion", "Lithium", "Ni-CD", "Ni-MH"]  # Update based on your dataset
-    print(f"Predicted class: {class_labels[predicted_index]} with confidence: {confidence:.4f}")
