@@ -11,4 +11,10 @@ pip install -r requirements.txt
 ```
 
 ## Acknowledgments
-A big portion of my dataset comes from the repository [Singapore_Battery_Dataset](https://github.com/FriedrichZhao/Singapore_Battery_Dataset)
+Portions of my dataset come from different datasets online.
+These include:
+[Singapore Battery Dataset](https://github.com/FriedrichZhao/Singapore_Battery_Dataset)
+
+[Roboflow batteries Computer Vision Project](https://universe.roboflow.com/school-gchcr/batteries-1aib9)
+
+[Google images](https://www.google.com/imghp?hl=en&authuser=0&ogbl)
