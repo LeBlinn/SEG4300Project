@@ -3,6 +3,14 @@ I am currently using resnet18 and getting promising results. \
 My dataset is very small, so I am working on improving it \
 (especially the NI-CD & NI-MH data)
 
+## Steps to build/run model trainer
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+Then run the Jupyter Notebook
+
 ## Deploy docker & Utilize
 Run docker compose
 ```bash
@@ -18,13 +26,11 @@ Use curl to try the api out
 curl -X POST http://127.0.0.1:80/predict -F "image=@testimg.jpg"
 ```
 
-## Steps to build/run model trainer
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-```
-Then run the Jupyter Notebook
+## Screenshots
+**Demo website**
+![Website with a test image](./Images/WebsiteImg.png)
+**Classification Report & Confusion Matrix**
+![Classification Report & Confusion Matrix](./Images/image2.png)
 
 ## Acknowledgments
 Parts of my dataset originate from various online datasets. \
