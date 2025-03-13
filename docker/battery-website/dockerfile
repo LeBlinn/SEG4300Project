@@ -1,0 +1,26 @@
+# Stage 1: Build the React app with Vite
+FROM denoland/deno:2.2.3 as build
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the project files
+COPY . .
+
+# Install dependencies
+# RUN deno cache main.ts
+
+# Build the project
+RUN deno task build
+
+# Stage 2: Serve the React app using Nginx
+FROM nginx:alpine
+
+# Copy the built React app from the previous stage
+COPY --from=build /app/dist /usr/share/nginx/html
+
+# Expose port 80
+EXPOSE 80
+
+# Start Nginx server
+CMD ["nginx", "-g", "daemon off;"]
