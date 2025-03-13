@@ -9,7 +9,7 @@ Run docker compose
 cd docker
 docker compose up
 ```
-Go to website that is now up at 127.0.0.1:80
+Go to the website that is now up at 127.0.0.1:80
 
 or
 

@@ -5,6 +5,7 @@ function App() {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [imagePreview, setImagePreview] = useState<string | null>(null);
   const [response, setResponse] = useState<{ confidence: number; predicted_class: string } | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0] || null;
@@ -31,10 +32,19 @@ function App() {
         method: 'POST',
         body: formData,
       });
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(errorText);
+      }
+
       const result = await response.json();
       setResponse(result);
+      setError(null);
     } catch (error) {
       console.error('Error:', error);
+      setError(error.message);
+      setResponse(null);
     }
   };
 
@@ -54,6 +64,12 @@ function App() {
       <button onClick={handleSubmit} disabled={!selectedFile}>
         Submit
       </button>
+      {error && (
+        <div className="error-container">
+          <h2>Error</h2>
+          <p>{error}</p>
+        </div>
+      )}
       {response && (
         <div className="response-container">
           <h2>Prediction Result</h2>
