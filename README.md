@@ -27,9 +27,13 @@ curl -X POST http://127.0.0.1:80/predict -F "image=@testimg.jpg"
 ```
 
 ## Screenshots
+
 **Demo website**
+
 ![Website with a test image](./Images/WebsiteImg.png)
+
 **Classification Report & Confusion Matrix**
+
 ![Classification Report & Confusion Matrix](./Images/image2.png)
 
 ## Acknowledgments
